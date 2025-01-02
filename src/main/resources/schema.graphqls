@@ -1,0 +1,40 @@
+# User
+type User {
+    id: Int!
+    username: String!
+}
+
+type Query {
+    getAllUsers: [User!]!
+    getUserById(id: Int!): User
+    getUserByName(username: String!): User
+}
+
+type Mutation {
+    createUser(username: String!, password: String!): Boolean
+    updateUser(id: Int!, username: String!, password: String!): Boolean
+    deleteUser(id: Int!): Boolean
+}
+
+# Muskel und Training
+type Muskel {
+    id: Int!
+    name: String!
+}
+
+type Training {
+    id: Int!
+    name: String!
+    description: String
+    muskeln: [Muskel!]!
+}
+
+extend type Query {
+    getAllUebungen: [Training!]!
+}
+
+extend type Mutation {
+    createTrainingMitMuskeln(trainingName: String!, description: String, muskelNamen: [String!]!): Boolean
+    addMuskelToTraining(trainingName: String!, muskelName: String!): Boolean
+    deleteTraining(trainingName: String!): Boolean
+}

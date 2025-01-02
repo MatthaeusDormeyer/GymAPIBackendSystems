@@ -1,0 +1,9 @@
+20.12.2024: 9 - 14
+    Datenbank befüllt
+    JDBC implementiert
+    Umwandlung in Jason
+
+    TODO:
+    - Was macht der Objekt mapper
+    - Musklen CRUD
+    - JSON Rückgabewerte machen 
